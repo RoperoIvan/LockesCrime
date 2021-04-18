@@ -26,16 +26,21 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Input.GetAxis() is used to get the user's input
-        // You can furthor set it on Unity. (Edit, Project Settings, Input)
-        translation = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        straffe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        transform.Translate(straffe, 0, translation);
-
-        if (Input.GetKeyDown("escape"))
+        if(!DialogueManager.hasDialog)
         {
-            // turn on the cursor
-            Cursor.lockState = CursorLockMode.None;
+            // Input.GetAxis() is used to get the user's input
+            // You can furthor set it on Unity. (Edit, Project Settings, Input)
+            translation = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+            straffe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            transform.Translate(straffe, 0, translation);
+
+            if (Input.GetKeyDown("escape"))
+            {
+                // turn on the cursor
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
     }
+
+
 }
