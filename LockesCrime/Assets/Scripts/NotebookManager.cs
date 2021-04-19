@@ -15,10 +15,10 @@ public class NotebookManager : MonoBehaviour
     }
 
     [SerializeField]
-    private float NoteBookOpen;
+    private GameObject NoteBookOpen;
 
     [SerializeField]
-    private float NoteBookClose;
+    private GameObject NoteBookClose;
 
     [SerializeField]
     private float lerpDuration;
@@ -26,9 +26,14 @@ public class NotebookManager : MonoBehaviour
     [SerializeField]
     private List<Pages> pages;
 
+    [SerializeField]
+    private List<GameObject> notebookPages;
+
     bool isNotebookOpen;
 
     private int currentFile = 0;
+
+    private int currentPage = 0;
 
     void Awake()
     {
@@ -49,39 +54,37 @@ public class NotebookManager : MonoBehaviour
 
     public IEnumerator TakeNotebook()
     {
-        float destination;
-        float initPoint;
+        Vector3 destination;
+        Vector3 initPoint;
         if (isNotebookOpen)
         {
-            destination = NoteBookClose;
-            initPoint = NoteBookOpen;
+            destination = NoteBookClose.transform.position;
+            initPoint = NoteBookOpen.transform.position;
         }
         else
         { 
-            destination = NoteBookOpen;
-            initPoint = NoteBookClose;
+            destination = NoteBookOpen.transform.position;
+            initPoint = NoteBookClose.transform.position;
         }
 
         float timeElapsed = 0;
 
         while (timeElapsed < lerpDuration)
         {
-            transform.position = new Vector3(transform.position.x,
-                Mathf.Lerp(initPoint, destination, timeElapsed / lerpDuration),
-                transform.position.z);
+            transform.position = Vector3.Lerp(initPoint, destination, timeElapsed / lerpDuration);
 
             timeElapsed += Time.deltaTime;
 
             yield return null;
         }
 
-        transform.position = new Vector3 (transform.position.x, destination, transform.position.z);
+        transform.position = destination;
         isNotebookOpen = !isNotebookOpen;
     }
 
     public void MoveCursorPages(bool right)
     {
-
+        //if(currentPage > )
     }
 
     public IEnumerator PasePage(bool next)
