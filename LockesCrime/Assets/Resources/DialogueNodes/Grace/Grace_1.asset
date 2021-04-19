@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
+  m_Name: Grace_1
+  m_EditorClassIdentifier: 
+  dialogues:
+  - How are you?
+  responses:
+  - response: Fine, and you?
+    dialogueNode: {fileID: 11400000, guid: 45c591f87799bac4eb308ce15af76392, type: 2}
+  - response: Bad, you?
+    dialogueNode: {fileID: 11400000, guid: 33256f7bf569268418da1558008083d0, type: 2}

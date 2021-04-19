@@ -48,7 +48,7 @@ public class CharacterController : MonoBehaviour
             StartCoroutine(NotebookManager.notebookM.TakeNotebook());
             isNotebookOpen = !isNotebookOpen;
         }
-        //if (isNotebookOpen)
+        if (isNotebookOpen)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
