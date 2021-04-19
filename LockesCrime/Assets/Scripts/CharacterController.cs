@@ -52,11 +52,11 @@ public class CharacterController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                StartCoroutine(NotebookManager.notebookM.PasePage(false));
+                NotebookManager.notebookM.MoveCursorPages(false);
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                StartCoroutine(NotebookManager.notebookM.PasePage(true));
+                NotebookManager.notebookM.MoveCursorPages(true);
             }
         }
     }

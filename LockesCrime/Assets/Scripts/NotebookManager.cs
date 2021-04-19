@@ -29,6 +29,12 @@ public class NotebookManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> notebookPages;
 
+    [SerializeField]
+    private Color NotebookCol;
+
+    [SerializeField]
+    private Color SelectedPageColor;
+
     bool isNotebookOpen;
 
     private int currentFile = 0;
@@ -84,7 +90,27 @@ public class NotebookManager : MonoBehaviour
 
     public void MoveCursorPages(bool right)
     {
-        //if(currentPage > )
+        if(currentPage != notebookPages.Count - 1 && right)
+        {
+            if(currentPage%2 == 0)
+            {
+                StartCoroutine(PasePage(true));
+            }
+
+            notebookPages[currentPage].GetComponent<Renderer>().material.SetColor("_Color", NotebookCol);
+            currentPage++;
+            notebookPages[currentPage].GetComponent<Renderer>().material.SetColor("_Color", SelectedPageColor);
+        }
+        else if(currentPage != 0 && !right)
+        {
+            if(currentPage % 2 == 1)
+            {
+                StartCoroutine(PasePage(false));
+            }
+            notebookPages[currentPage].GetComponent<Renderer>().material.SetColor("_Color", NotebookCol);
+            currentPage--;
+            notebookPages[currentPage].GetComponent<Renderer>().material.SetColor("_Color", SelectedPageColor);
+        }
     }
 
     public IEnumerator PasePage(bool next)

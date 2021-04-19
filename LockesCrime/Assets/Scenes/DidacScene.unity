@@ -313,6 +313,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &69574286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6161545083227443846, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+  m_PrefabInstance: {fileID: 795555312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &128562720 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5496723043495415581, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
@@ -655,6 +660,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: notebookPages.Array.data[0]
+      value: 
+      objectReference: {fileID: 1420026504}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: notebookPages.Array.data[1]
+      value: 
+      objectReference: {fileID: 69574286}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: notebookPages.Array.data[2]
+      value: 
+      objectReference: {fileID: 897752026}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: notebookPages.Array.data[3]
+      value: 
+      objectReference: {fileID: 1622476897}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: NotebookCol.r
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: NotebookCol.g
+      value: 0.48627454
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: NotebookCol.b
+      value: 0.04705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: NotebookCol.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: SelectedPageColor.r
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: SelectedPageColor.g
+      value: 0.378471
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: SelectedPageColor.b
+      value: 0.378471
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: SelectedPageColor.a
+      value: 0.43137255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
 --- !u!1 &854952733
@@ -847,6 +900,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &897752026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4575145529066832142, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+  m_PrefabInstance: {fileID: 795555312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &911987248
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,6 +1030,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1420026504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1420026504, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+  m_PrefabInstance: {fileID: 795555312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568642307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1176,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1622476897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1622476897, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+  m_PrefabInstance: {fileID: 795555312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1974452831
 GameObject:
   m_ObjectHideFlags: 0
