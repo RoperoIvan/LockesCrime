@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NotebookManager : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class NotebookManager : MonoBehaviour
         public Quaternion closePageRotation;
     }
 
+    [System.Serializable]
+    struct VerticalNotebook
+    {
+        public GameObject first;
+        public GameObject second;
+        public GameObject childFirst;
+        public GameObject childSecond;
+    }
     [SerializeField]
     private GameObject NoteBookOpen;
 
@@ -27,20 +36,23 @@ public class NotebookManager : MonoBehaviour
     private List<Pages> pages;
 
     [SerializeField]
-    private List<GameObject> notebookPages;
+    private List<VerticalNotebook> notebookNav;
 
     [SerializeField]
-    private Color NotebookCol;
+    private Material OriginalColor;
 
     [SerializeField]
-    private Color SelectedPageColor;
+    private Material SelectedColor;
 
     bool isNotebookOpen;
 
     private int currentFile = 0;
-
     private int currentPage = 0;
+    private GameObject clueSelected;
+    private GameObject currentTitle;
+    private bool isClueSelected;
 
+    private float depthVal = -27.62904F;
     void Awake()
     {
         notebookM = this;
@@ -50,12 +62,7 @@ public class NotebookManager : MonoBehaviour
     void Start()
     {
         isNotebookOpen = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        currentTitle = notebookNav[0].first;
     }
 
     public IEnumerator TakeNotebook()
@@ -88,28 +95,71 @@ public class NotebookManager : MonoBehaviour
         isNotebookOpen = !isNotebookOpen;
     }
 
-    public void MoveCursorPages(bool right)
+    public void MoveVCursorPages(bool Down)
     {
-        if(currentPage != notebookPages.Count - 1 && right)
+        if (currentPage == 0 || notebookNav[currentPage].second == null)
+            return;
+
+        if (Down)
         {
-            if(currentPage%2 == 0)
+            currentTitle = notebookNav[currentPage].second;
+            notebookNav[currentPage].first.GetComponent<MeshRenderer>().material = OriginalColor;
+            notebookNav[currentPage].second.GetComponent<MeshRenderer>().material = SelectedColor;
+
+        }
+        else
+        {
+            currentTitle = notebookNav[currentPage].first;
+            notebookNav[currentPage].second.GetComponent<MeshRenderer>().material = OriginalColor;
+            notebookNav[currentPage].first.GetComponent<MeshRenderer>().material = SelectedColor;
+        }
+
+        //notebookNav[currentPage].first.GetComponent<MeshRenderer>().material = SelectedColor;
+    }
+    public void MoveHCursorPages(bool right)
+    {
+        if (notebookNav[currentPage].first != null)
+        {
+            notebookNav[currentPage].first.GetComponent<MeshRenderer>().material = OriginalColor;
+        }
+        if (notebookNav[currentPage].second != null)
+        {
+            notebookNav[currentPage].second.GetComponent<MeshRenderer>().material = OriginalColor;
+        }
+
+        if (currentPage != notebookNav.Count - 1 && right)
+        {
+            if (currentPage % 2 == 0)
             {
                 StartCoroutine(PasePage(true));
             }
-
-            notebookPages[currentPage].GetComponent<Renderer>().material.SetColor("_Color", NotebookCol);
             currentPage++;
-            notebookPages[currentPage].GetComponent<Renderer>().material.SetColor("_Color", SelectedPageColor);
         }
-        else if(currentPage != 0 && !right)
+        else if (currentPage != 0 && !right)
         {
-            if(currentPage % 2 == 1)
+            if (currentPage % 2 == 1)
             {
                 StartCoroutine(PasePage(false));
             }
-            notebookPages[currentPage].GetComponent<Renderer>().material.SetColor("_Color", NotebookCol);
             currentPage--;
-            notebookPages[currentPage].GetComponent<Renderer>().material.SetColor("_Color", SelectedPageColor);
+        }
+
+        if (notebookNav[currentPage].first != null)
+        {
+            currentTitle = notebookNav[currentPage].first;
+            notebookNav[currentPage].first.GetComponent<MeshRenderer>().material = SelectedColor;
+            if(isClueSelected)
+            {
+                Vector3 localPos = clueSelected.GetComponent<RectTransform>().position;
+                clueSelected.GetComponent<RectTransform>().SetParent(notebookNav[currentPage].childFirst.transform);
+                clueSelected.GetComponent<RectTransform>().localPosition = new Vector3(localPos.x,localPos.y,depthVal);
+                clueSelected.GetComponent<RectTransform>().localScale = new Vector3(1.29F,1,1);
+                if(currentPage%2 == 0 || currentPage == 1)
+                    clueSelected.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, 0, 0);
+                else
+                    clueSelected.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0,180,0);
+
+            }
         }
     }
 
@@ -150,5 +200,98 @@ public class NotebookManager : MonoBehaviour
         pages[currentFile].page.transform.rotation = destination;
         if (next)
             ++currentFile;
+    }
+
+    public void MoveInSeccion(bool moveUp)
+    {
+        int movment = 1;
+        if(!moveUp)
+        {
+            movment = -1;
+        }
+        if (currentTitle == null || clueSelected == null)
+            return;
+
+        if(currentTitle == notebookNav[currentPage].first)
+        {
+            GameObject obj = notebookNav[currentPage].childFirst;
+            if (obj.transform.childCount > 0)
+            {
+
+                foreach (Transform d in obj.transform)
+                {
+                    if (clueSelected == d.gameObject)
+                    {
+                        clueSelected.GetComponent<MeshRenderer>().material = OriginalColor;
+                        if (d.GetSiblingIndex() < obj.transform.childCount - 1 && moveUp)
+                        {
+                            clueSelected = obj.transform.GetChild(d.GetSiblingIndex() + movment).gameObject;
+                            clueSelected.GetComponent<MeshRenderer>().material = SelectedColor;
+                            return;
+                        }
+                        else if (d.GetSiblingIndex() == obj.transform.childCount - 1 && moveUp)
+                        {
+                            clueSelected = obj.transform.GetChild(0).gameObject;
+                            clueSelected.GetComponent<MeshRenderer>().material = SelectedColor;
+                            return;
+                        }
+                        else if (d.GetSiblingIndex() > 0 && !moveUp)
+                        {
+                            clueSelected = obj.transform.GetChild(d.GetSiblingIndex() + movment).gameObject;
+                            clueSelected.GetComponent<MeshRenderer>().material = SelectedColor;
+                            return;
+                        }
+                        else if (d.GetSiblingIndex() == 0 && !moveUp)
+                        {
+                            clueSelected = obj.transform.GetChild(obj.transform.childCount - 1).gameObject;
+                            clueSelected.GetComponent<MeshRenderer>().material = SelectedColor;
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            
+        }
+    }
+
+    public bool EnterParragraf(bool inside)
+    {
+        if (notebookNav[currentPage].childFirst == null)
+            return false;
+        if (inside)
+        {
+            currentTitle.GetComponent<MeshRenderer>().material = OriginalColor;
+            GameObject obj = notebookNav[currentPage].childFirst;
+            if (obj.transform.childCount > 0)
+            {
+                clueSelected = obj.transform.GetChild(0).gameObject;
+                clueSelected.transform.GetComponent<MeshRenderer>().material = SelectedColor;
+                return true;
+            }
+        }
+        else
+        {
+            currentTitle.GetComponent<MeshRenderer>().material = SelectedColor;
+            clueSelected.transform.GetComponent<MeshRenderer>().material = OriginalColor;
+            clueSelected = null;
+        }
+        return false;
+    }
+
+    public void SelectClue(bool selecting)
+    {
+        isClueSelected = selecting;
+        if(!selecting)
+        {
+            clueSelected.transform.GetComponent<MeshRenderer>().material = OriginalColor;
+            clueSelected = null;
+        }
+        else
+        {
+            currentTitle.GetComponent<MeshRenderer>().material = SelectedColor;
+        }
     }
 }

@@ -16,11 +16,17 @@ public class CharacterController : MonoBehaviour
     private float translation;
     private float straffe;
 
+    //notebook variables
     private bool isNotebookOpen;
+    private bool isInsideTitle;
+    private bool isClueSelected;
+    
     // Use this for initialization
     void Start()
     {
         isNotebookOpen = false;
+        isInsideTitle = false;
+        isClueSelected = false;
         // turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -48,17 +54,68 @@ public class CharacterController : MonoBehaviour
             StartCoroutine(NotebookManager.notebookM.TakeNotebook());
             isNotebookOpen = !isNotebookOpen;
         }
-        if (isNotebookOpen)
+        if (isNotebookOpen && !isInsideTitle)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                NotebookManager.notebookM.MoveCursorPages(false);
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                NotebookManager.notebookM.MoveCursorPages(true);
-            }
+            NotebookMovment();
         }
+        else if(isInsideTitle)
+        {
+            TitleMovment();
+        }
+    }
+
+    private void NotebookMovment()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            NotebookManager.notebookM.MoveHCursorPages(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NotebookManager.notebookM.MoveHCursorPages(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            NotebookManager.notebookM.MoveVCursorPages(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            NotebookManager.notebookM.MoveVCursorPages(true);
+        }
+        else if(Input.GetKeyDown(KeyCode.Space) && !isClueSelected)
+        {
+            isInsideTitle = NotebookManager.notebookM.EnterParragraf(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && isClueSelected)
+        {
+            isInsideTitle = false;
+            isClueSelected = false;
+            NotebookManager.notebookM.SelectClue(false);
+        }
+    }
+
+    private void TitleMovment()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            NotebookManager.notebookM.MoveInSeccion(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            NotebookManager.notebookM.MoveInSeccion(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isInsideTitle = false;
+            NotebookManager.notebookM.EnterParragraf(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isClueSelected = true;
+            isInsideTitle = false;
+            NotebookManager.notebookM.SelectClue(true);
+        }
+
     }
     private void OnTriggerEnter(Collider other)
     {
