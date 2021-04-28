@@ -17,6 +17,9 @@ public class MouseCamLook : MonoBehaviour
     public float sensitivity = 5.0f;
     [SerializeField]
     public float smoothing = 2.0f;
+
+    public float angleClamp = 90f;
+
     // the chacter is the capsule
     public GameObject character;
     // get the incremental value of mouse moving
@@ -45,7 +48,7 @@ public class MouseCamLook : MonoBehaviour
             mouseLook += smoothV;
 
             // vector3.right means the x-axis
-            transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+            transform.localRotation = Quaternion.AngleAxis(-Mathf.Clamp(mouseLook.y,-90,90), Vector3.right);
             character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
         }
     }
