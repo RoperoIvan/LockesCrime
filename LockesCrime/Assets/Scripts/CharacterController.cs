@@ -43,11 +43,11 @@ public class CharacterController : MonoBehaviour
             transform.Translate(straffe, 0, translation);
         }
 
-        if (Input.GetKeyDown("escape"))
-        {
-            // turn on the cursor
-            Cursor.lockState = CursorLockMode.None;
-        }
+        //if (Input.GetKeyDown("escape"))
+        //{
+        //    // turn on the cursor
+        //    Cursor.lockState = CursorLockMode.None;
+        //}
         //notebook controllers
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -121,7 +121,12 @@ public class CharacterController : MonoBehaviour
     {
         if (other.gameObject.layer == 8)
         {
-            CluesManager.CluesM.OnCol(other);
+            Clue objClue = other.gameObject.GetComponent<Clue>();
+
+            if (objClue != null)
+                CluesManager.CluesM.OnCol(objClue);
+            else
+                Debug.LogWarning("This object has not clue within!");
         }
     }
 }

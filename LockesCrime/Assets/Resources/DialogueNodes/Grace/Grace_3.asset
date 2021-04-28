@@ -15,7 +15,9 @@ MonoBehaviour:
   dialogues:
   - What happened?
   responses:
-  - response: Nothing, bye!
+  - isInvisible: 0
+    response: Nothing, bye!
     dialogueNode: {fileID: 0}
-  - response: Shut up!
+  - isInvisible: 0
+    response: Shut up!
     dialogueNode: {fileID: 0}
