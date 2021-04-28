@@ -27,7 +27,7 @@ public class DialogueCharacter : MonoBehaviour
             if (Vector3.Distance(gameObject.transform.position, player.transform.position) < interactionDistance)
             {
                 interactGO.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.T))
                 {
                     interactGO.SetActive(false);
                     dManager.gameObject.SetActive(true);
