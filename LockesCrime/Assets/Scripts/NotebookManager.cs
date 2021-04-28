@@ -251,32 +251,46 @@ public class NotebookManager : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            
-        }
     }
 
     public bool EnterParragraf(bool inside)
     {
-        if (notebookNav[currentPage].childFirst == null)
+        if (currentTitle == null)
             return false;
-        if (inside)
+        if (notebookNav[currentPage].first == currentTitle)
         {
-            currentTitle.GetComponent<MeshRenderer>().material = OriginalColor;
-            GameObject obj = notebookNav[currentPage].childFirst;
-            if (obj.transform.childCount > 0)
+            if (notebookNav[currentPage].childFirst == null)
+                return false;
+            if (inside)
             {
-                clueSelected = obj.transform.GetChild(0).gameObject;
-                clueSelected.transform.GetComponent<MeshRenderer>().material = SelectedColor;
-                return true;
+                currentTitle.GetComponent<MeshRenderer>().material = OriginalColor;
+                GameObject obj = notebookNav[currentPage].childFirst;
+                if (obj.transform.childCount > 0)
+                {
+                    clueSelected = obj.transform.GetChild(0).gameObject;
+                    clueSelected.transform.GetComponent<MeshRenderer>().material = SelectedColor;
+                    return true;
+                }
+            }
+            else
+            {
+                currentTitle.GetComponent<MeshRenderer>().material = SelectedColor;
+                clueSelected.transform.GetComponent<MeshRenderer>().material = OriginalColor;
+                clueSelected = null;
             }
         }
-        else
+        else if(currentTitle == notebookNav[currentPage].second)
         {
-            currentTitle.GetComponent<MeshRenderer>().material = SelectedColor;
-            clueSelected.transform.GetComponent<MeshRenderer>().material = OriginalColor;
-            clueSelected = null;
+            if (notebookNav[currentPage].second == null || notebookNav[currentPage].childSecond == null)
+                return false;
+            if(inside)
+            {
+                notebookNav[currentPage].childSecond.GetComponent<TextMeshProUGUI>();
+            }
+            else
+            {
+                clueSelected = null;
+            }
         }
         return false;
     }
