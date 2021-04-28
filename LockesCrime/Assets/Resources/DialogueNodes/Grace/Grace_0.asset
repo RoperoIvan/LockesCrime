@@ -15,7 +15,9 @@ MonoBehaviour:
   dialogues:
   - Hello!
   responses:
-  - response: Hi!
+  - isInvisible: 1
+    response: Hi!
     dialogueNode: {fileID: 11400000, guid: c0858bb99fc69e7458c93d426d6adf79, type: 2}
-  - response: Goodbye!
+  - isInvisible: 0
+    response: Goodbye!
     dialogueNode: {fileID: 0}

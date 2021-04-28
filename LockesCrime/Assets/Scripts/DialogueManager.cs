@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager dialogueManager;
     public static bool hasDialog = false;
     public Dialogue currentDialogueNode;
     public GameObject responseContainer;
@@ -13,14 +14,22 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text dialogueTxt;
 
     private Dialogue[] lastDialogueNodes = new Dialogue[3]; //0: James, 1: Grace, 2: Diane
-    private Dialogue[] nodesJames;
-    private Dialogue[] nodesGrace;
-    private Dialogue[] nodesDiane;
+    public Dialogue[] nodesJames;
+    public Dialogue[] nodesGrace;
+    public Dialogue[] nodesDiane;
 
     private int currentChar;
 
     private void Awake()
     {
+        if (dialogueManager != null)
+        {
+            Debug.LogError("There is more than one instance!");
+            return;
+        }
+
+        dialogueManager = this;
+
         nodesJames = Resources.LoadAll<Dialogue>("DialogueNodes/James");
         nodesGrace = Resources.LoadAll<Dialogue>("DialogueNodes/Grace");
         nodesDiane = Resources.LoadAll<Dialogue>("DialogueNodes/Diane");
@@ -63,6 +72,9 @@ public class DialogueManager : MonoBehaviour
                 newResponse.GetComponent<Button>().onClick.AddListener(() => { GoToNextNode(nDial); });
 
             newResponse.transform.GetChild(0).GetComponent<TMP_Text>().text = currentDialogueNode.responses[i].response;
+
+            if (currentDialogueNode.responses[i].isInvisible)
+                newResponse.SetActive(false);
         }
         StartCoroutine(RevealText(currentDialogueNode.dialogues));
     }
@@ -106,6 +118,9 @@ public class DialogueManager : MonoBehaviour
             else
                 newResponse.GetComponent<Button>().onClick.AddListener(() => { GoToNextNode(nDial); });
             newResponse.transform.GetChild(0).GetComponent<TMP_Text>().text = currentDialogueNode.responses[i].response;
+
+            if (currentDialogueNode.responses[i].isInvisible)
+                newResponse.SetActive(false);
         }
     }
 
