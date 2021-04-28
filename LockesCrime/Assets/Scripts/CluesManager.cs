@@ -17,7 +17,7 @@ public class CluesManager : MonoBehaviour
     [SerializeField]
     private Transform NoteBook;
 
-    private List<string> cluesSaved;
+    private List<Clue> cluesSaved;
 
     void Awake()
     {
@@ -32,7 +32,7 @@ public class CluesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cluesSaved = new List<string>();
+        cluesSaved = new List<Clue>();
     }
 
     // Update is called once per frame
@@ -41,21 +41,44 @@ public class CluesManager : MonoBehaviour
 
     }
 
-    public void OnCol(Collider collision)
+    public void OnCol(Clue clue)
     {
         Debug.Log(cluesSaved.Count);
 
         for (int i = 0; i < cluesSaved.Count; ++i)
         {
-            if (cluesSaved[i].CompareTo(collision.gameObject.name) == 0)
-            {
+            if (cluesSaved[i].Equals(clue.clueName))
                 return;
+        }
+
+        Dialogue.Responses resp = null;
+        foreach(Clue.UnBlockedResponse node in clue.unblockedResponses)
+        {
+            if(node.character.Contains("Grace"))
+            {
+
+                resp = DialogueManager.dialogueManager.nodesGrace[node.idNode].responses[node.idResponse];
+                break;
             }
+            else if(node.character.Contains("James"))
+            {
+                resp = DialogueManager.dialogueManager.nodesJames[node.idNode].responses[node.idResponse];
+                break;
+            }
+            else
+            {
+                resp = DialogueManager.dialogueManager.nodesDiane[node.idNode].responses[node.idResponse];
+                break;
+            }
+        }
+        
+        if(resp != null)
+        {
+            resp.isInvisible = !resp.isInvisible;
         }
 
         GameObject newText = Instantiate(TextPrefab, CluesPage);
-        newText.GetComponent<TextMeshPro>().text = collision.gameObject.name;
-        cluesSaved.Add(collision.gameObject.name);
+        newText.GetComponent<TextMeshPro>().text = clue.clueName;
+        cluesSaved.Add(clue);
     }
-
 }

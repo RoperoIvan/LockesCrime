@@ -714,6 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 2
   smoothing: 2
+  angleClamp: 90
   character: {fileID: 1851198726983998636}
 --- !u!1 &2626284341236613769
 GameObject:
