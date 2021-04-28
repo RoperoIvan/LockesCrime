@@ -24,8 +24,6 @@ public class DialogueManager : MonoBehaviour
         nodesJames = Resources.LoadAll<Dialogue>("DialogueNodes/James");
         nodesGrace = Resources.LoadAll<Dialogue>("DialogueNodes/Grace");
         nodesDiane = Resources.LoadAll<Dialogue>("DialogueNodes/Diane");
-
-        //RefreshDialogueContainer(1);
     }
     public void RefreshDialogueContainer(int character)
     {
