@@ -49,7 +49,7 @@ public class CharacterController : MonoBehaviour
         //    Cursor.lockState = CursorLockMode.None;
         //}
         //notebook controllers
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
             StartCoroutine(NotebookManager.notebookM.TakeNotebook());
             isNotebookOpen = !isNotebookOpen;

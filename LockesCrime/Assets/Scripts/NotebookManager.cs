@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class NotebookManager : MonoBehaviour
@@ -39,6 +41,9 @@ public class NotebookManager : MonoBehaviour
     private List<VerticalNotebook> notebookNav;
 
     [SerializeField]
+    private InputField inputField;
+
+    [SerializeField]
     private Material OriginalColor;
 
     [SerializeField]
@@ -63,6 +68,18 @@ public class NotebookManager : MonoBehaviour
     {
         isNotebookOpen = false;
         currentTitle = notebookNav[0].first;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return) &&
+            EventSystem.current.currentSelectedGameObject == inputField.gameObject)
+        {
+            notebookNav[currentPage].childSecond.GetComponent<TextMeshPro>().text = inputField.text;
+            inputField.text = null;
+            EventSystem.current.SetSelectedGameObject(null, null);
+            inputField.gameObject.SetActive(false);
+        }
     }
 
     public IEnumerator TakeNotebook()
@@ -285,7 +302,9 @@ public class NotebookManager : MonoBehaviour
                 return false;
             if(inside)
             {
-                notebookNav[currentPage].childSecond.GetComponent<TextMeshProUGUI>();
+                inputField.gameObject.SetActive(true);
+
+                EventSystem.current.SetSelectedGameObject(inputField.gameObject, null);
             }
             else
             {
