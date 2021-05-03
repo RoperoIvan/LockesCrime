@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
     {
         Dialogue[] charNodes = { };
         hasDialog = true;
+        MouseCamLook.mouseCamLook.moveCam = false;
         Cursor.lockState = CursorLockMode.None;
         currentChar = character;
 
@@ -95,6 +96,7 @@ public class DialogueManager : MonoBehaviour
         CleanResponses();
         lastDialogueNodes[currentChar] = currentDialogueNode;
         hasDialog = false;
+        MouseCamLook.mouseCamLook.moveCam = true;
         Cursor.lockState = CursorLockMode.Locked;
         gameObject.SetActive(false);
     }

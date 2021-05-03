@@ -16,6 +16,16 @@ public class CharacterController : MonoBehaviour
     private float translation;
     private float straffe;
 
+    public enum STATE
+    {
+        NOTEBOOK_OPEN,
+        INSIDE_TITLE,
+        CLUE_SELECTED,
+        EXAMINING_CLUE,
+        NONE
+    }
+
+    private STATE state;
     //notebook variables
     private bool isNotebookOpen;
     private bool isInsideTitle;
@@ -27,6 +37,7 @@ public class CharacterController : MonoBehaviour
         isNotebookOpen = false;
         isInsideTitle = false;
         isClueSelected = false;
+        state = STATE.NONE;
         // turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -36,7 +47,7 @@ public class CharacterController : MonoBehaviour
     {
         // Input.GetAxis() is used to get the user's input
         // You can furthor set it on Unity. (Edit, Project Settings, Input)
-        if(!isNotebookOpen)
+        if(state == STATE.NONE)
         {
             translation = Input.GetAxis("Vertical") * speed * Time.deltaTime;
             straffe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
@@ -52,13 +63,16 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
             StartCoroutine(NotebookManager.notebookM.TakeNotebook());
-            isNotebookOpen = !isNotebookOpen;
+            if (state == STATE.NOTEBOOK_OPEN)
+                state = STATE.NONE;
+            else
+                state = STATE.NOTEBOOK_OPEN;
         }
-        if (isNotebookOpen && !isInsideTitle)
+        if (state == STATE.NOTEBOOK_OPEN || state == STATE.CLUE_SELECTED)
         {
             NotebookMovment();
         }
-        else if(isInsideTitle)
+        else if(state == STATE.INSIDE_TITLE)
         {
             TitleMovment();
         }
@@ -82,14 +96,14 @@ public class CharacterController : MonoBehaviour
         {
             NotebookManager.notebookM.MoveVCursorPages(true);
         }
-        else if(Input.GetKeyDown(KeyCode.Space) && !isClueSelected)
+        else if(Input.GetKeyDown(KeyCode.Space) && state == STATE.NOTEBOOK_OPEN)
         {
             isInsideTitle = NotebookManager.notebookM.EnterParragraf(true);
+            state = STATE.INSIDE_TITLE;
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && isClueSelected)
+        else if (Input.GetKeyDown(KeyCode.Space) && state == STATE.CLUE_SELECTED)
         {
-            isInsideTitle = false;
-            isClueSelected = false;
+            state = STATE.NOTEBOOK_OPEN;
             NotebookManager.notebookM.SelectClue(false);
         }
     }
@@ -106,13 +120,12 @@ public class CharacterController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isInsideTitle = false;
+            state = STATE.NOTEBOOK_OPEN;
             NotebookManager.notebookM.EnterParragraf(false);
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            isClueSelected = true;
-            isInsideTitle = false;
+            state = STATE.CLUE_SELECTED;
             NotebookManager.notebookM.SelectClue(true);
         }
 

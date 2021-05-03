@@ -12,7 +12,9 @@ using UnityEngine;
 
 public class MouseCamLook : MonoBehaviour
 {
+    public static MouseCamLook mouseCamLook;
 
+    public bool moveCam;
     [SerializeField]
     public float sensitivity = 5.0f;
     [SerializeField]
@@ -30,13 +32,15 @@ public class MouseCamLook : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        mouseCamLook = this;
         character = this.transform.parent.gameObject;
+        moveCam = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!DialogueManager.hasDialog)
+        if(moveCam)
         {
             // md is mosue delta
             var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
