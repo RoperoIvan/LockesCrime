@@ -117,16 +117,4 @@ public class CharacterController : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == 8)
-        {
-            Clue objClue = other.gameObject.GetComponent<Clue>();
-
-            if (objClue != null)
-                CluesManager.CluesM.OnCol(objClue);
-            else
-                Debug.LogWarning("This object has not clue within!");
-        }
-    }
 }

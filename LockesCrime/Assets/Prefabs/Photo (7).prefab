@@ -114,3 +114,6 @@ MonoBehaviour:
   - character: Grace
     idNode: 0
     idResponse: 0
+  interactionDistance: 20
+  player: {fileID: 0}
+  interactGO: {fileID: 0}
