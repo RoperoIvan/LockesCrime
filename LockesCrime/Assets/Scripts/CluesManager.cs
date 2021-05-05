@@ -47,7 +47,7 @@ public class CluesManager : MonoBehaviour
 
         for (int i = 0; i < cluesSaved.Count; ++i)
         {
-            if (cluesSaved[i].Equals(clue.clueName))
+            if (cluesSaved[i].Equals(clue))
                 return;
         }
 

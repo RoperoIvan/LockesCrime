@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class NotebookManager : MonoBehaviour
@@ -39,6 +41,9 @@ public class NotebookManager : MonoBehaviour
     private List<VerticalNotebook> notebookNav;
 
     [SerializeField]
+    private InputField inputField;
+
+    [SerializeField]
     private Material OriginalColor;
 
     [SerializeField]
@@ -63,6 +68,18 @@ public class NotebookManager : MonoBehaviour
     {
         isNotebookOpen = false;
         currentTitle = notebookNav[0].first;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return) &&
+            EventSystem.current.currentSelectedGameObject == inputField.gameObject)
+        {
+            notebookNav[currentPage].childSecond.GetComponent<TextMeshPro>().text = inputField.text;
+            inputField.text = null;
+            EventSystem.current.SetSelectedGameObject(null, null);
+            inputField.gameObject.SetActive(false);
+        }
     }
 
     public IEnumerator TakeNotebook()
@@ -251,32 +268,48 @@ public class NotebookManager : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            
-        }
     }
 
     public bool EnterParragraf(bool inside)
     {
-        if (notebookNav[currentPage].childFirst == null)
+        if (currentTitle == null)
             return false;
-        if (inside)
+        if (notebookNav[currentPage].first == currentTitle)
         {
-            currentTitle.GetComponent<MeshRenderer>().material = OriginalColor;
-            GameObject obj = notebookNav[currentPage].childFirst;
-            if (obj.transform.childCount > 0)
+            if (notebookNav[currentPage].childFirst == null)
+                return false;
+            if (inside)
             {
-                clueSelected = obj.transform.GetChild(0).gameObject;
-                clueSelected.transform.GetComponent<MeshRenderer>().material = SelectedColor;
-                return true;
+                currentTitle.GetComponent<MeshRenderer>().material = OriginalColor;
+                GameObject obj = notebookNav[currentPage].childFirst;
+                if (obj.transform.childCount > 0)
+                {
+                    clueSelected = obj.transform.GetChild(0).gameObject;
+                    clueSelected.transform.GetComponent<MeshRenderer>().material = SelectedColor;
+                    return true;
+                }
+            }
+            else
+            {
+                currentTitle.GetComponent<MeshRenderer>().material = SelectedColor;
+                clueSelected.transform.GetComponent<MeshRenderer>().material = OriginalColor;
+                clueSelected = null;
             }
         }
-        else
+        else if(currentTitle == notebookNav[currentPage].second)
         {
-            currentTitle.GetComponent<MeshRenderer>().material = SelectedColor;
-            clueSelected.transform.GetComponent<MeshRenderer>().material = OriginalColor;
-            clueSelected = null;
+            if (notebookNav[currentPage].second == null || notebookNav[currentPage].childSecond == null)
+                return false;
+            if(inside)
+            {
+                inputField.gameObject.SetActive(true);
+
+                EventSystem.current.SetSelectedGameObject(inputField.gameObject, null);
+            }
+            else
+            {
+                clueSelected = null;
+            }
         }
         return false;
     }
