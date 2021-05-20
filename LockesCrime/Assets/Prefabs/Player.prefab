@@ -182,7 +182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169702224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.96, z: 2.99}
+  m_LocalPosition: {x: 0.1162214, y: 0.2470001, z: 1.3884568}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1851198727295514632}
@@ -670,7 +670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851198727295514635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.277, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3219669198381141002}
@@ -914,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5367540196104510803, guid: e484305c001bfa541a0397bae642a743, type: 3}
       propertyPath: m_text
-      value: James
+      value: Greace
       objectReference: {fileID: 0}
     - target: {fileID: 5367540196104510803, guid: e484305c001bfa541a0397bae642a743, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -2587,7 +2587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5367540196104510803, guid: e484305c001bfa541a0397bae642a743, type: 3}
       propertyPath: m_text
-      value: James
+      value: Diane
       objectReference: {fileID: 0}
     - target: {fileID: 5367540196104510803, guid: e484305c001bfa541a0397bae642a743, type: 3}
       propertyPath: m_fontColor32.rgba

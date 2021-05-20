@@ -12,6 +12,8 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
 
+    public static GameObject Player;
+
     public float speed = 10.0f;
     private float translation;
     private float straffe;
@@ -34,6 +36,11 @@ public class CharacterController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if(Player == null)
+        {
+            Player = gameObject;
+        }
+
         isNotebookOpen = false;
         isInsideTitle = false;
         isClueSelected = false;
