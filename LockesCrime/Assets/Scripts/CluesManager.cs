@@ -8,6 +8,13 @@ public class CluesManager : MonoBehaviour
 {
     public static CluesManager CluesM;
 
+    [System.Serializable]
+    struct histories
+    {
+        public string guilty;
+        public List<GameObject> clues;
+    }
+
     [SerializeField]
     private GameObject TextPrefab;
 
@@ -16,6 +23,9 @@ public class CluesManager : MonoBehaviour
 
     [SerializeField]
     private Transform NoteBook;
+
+    [SerializeField]
+    private List<histories> historyBranches;
 
     private List<Clue> cluesSaved;
 
@@ -33,8 +43,17 @@ public class CluesManager : MonoBehaviour
     void Start()
     {
         cluesSaved = new List<Clue>();
+        selectHistoy();
     }
 
+    void selectHistoy()
+    {
+        int randNum = Random.Range(0, historyBranches.Count);
+
+       for(int i = 0; i < historyBranches[randNum].clues.Count; ++i){
+            historyBranches[randNum].clues[i].SetActive(true);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
