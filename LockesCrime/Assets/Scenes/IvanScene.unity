@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: 0.6995287, z: 0, w: 0.7146046}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!1 &95668889
 GameObject:
@@ -1418,6 +1418,7 @@ GameObject:
   - component: {fileID: 285161231}
   - component: {fileID: 285161230}
   - component: {fileID: 285161229}
+  - component: {fileID: 285161232}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -1501,6 +1502,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285161227}
   m_Mesh: {fileID: -1856344252225202068, guid: 372edada7392b3e4885ea48a3d44e04d, type: 3}
+--- !u!114 &285161232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285161227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f9be4a4c3bfdd46991bfb99c255de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openRot: {x: 0, y: -0.016945919, z: 0, w: 0.9998564}
+  interactionDistance: 2
+  lerpOpenTime: 1
+  doorLabel: {fileID: 306524497}
 --- !u!1 &306524497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,7 +1767,6 @@ GameObject:
   - component: {fileID: 322826627}
   - component: {fileID: 322826626}
   - component: {fileID: 322826625}
-  - component: {fileID: 322826624}
   m_Layer: 0
   m_Name: pivotDoor11
   m_TagString: Untagged
@@ -1773,22 +1789,6 @@ Transform:
   m_Father: {fileID: 1330049256}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 88.359, z: 0}
---- !u!114 &322826624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322826622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19f9be4a4c3bfdd46991bfb99c255de0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRot: {x: 0, y: -0.016945919, z: 0, w: 0.9998564}
-  interactionDistance: 2
-  lerpOpenTime: 2
-  doorLabel: {fileID: 306524497}
 --- !u!65 &322826625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2332,7 +2332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: -0.9373025, z: 0, w: -0.348517}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!1 &483193458
 GameObject:
@@ -3191,7 +3191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: -0.34396893, z: 0, w: 0.938981}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!1 &668888709
 GameObject:
@@ -3904,7 +3904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: -0.73221576, z: 0, w: 0.6810728}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!1 &873827222
 GameObject:
@@ -4588,7 +4588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: 0.015079715, z: 0, w: 0.99988633}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!4 &1169702225 stripped
 Transform:
@@ -4705,7 +4705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: -0.010607579, z: 0, w: 0.99994373}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!1 &1179328014
 GameObject:
@@ -4812,15 +4812,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.15
+      value: -17.47
       objectReference: {fileID: 0}
     - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 6.7
       objectReference: {fileID: 0}
     - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.57
+      value: 10.58
       objectReference: {fileID: 0}
     - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6293,7 +6293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: 0.7640326, z: 0, w: 0.64517766}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!1 &1548912877
 GameObject:
@@ -8164,7 +8164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: 0.58339477, z: 0, w: -0.81218874}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!1 &1979767385
 GameObject:
@@ -9944,8 +9944,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &794542209903589718
-BoxCollider:
+--- !u!64 &794542209903589718
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9954,9 +9954,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.010000004, y: 0.010000001, z: 0.0100000035}
-  m_Center: {x: -6.984918e-10, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3628990442929905983, guid: 372edada7392b3e4885ea48a3d44e04d, type: 3}
 --- !u!33 &804299592236635615
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12138,8 +12139,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &2949212728317122234
-BoxCollider:
+--- !u!64 &2949212728317122234
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12148,9 +12149,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.010000003, y: 0.010000001, z: 0.0100000035}
-  m_Center: {x: 2.328307e-10, y: 6.9849193e-10, z: -0.00000011920929}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 664456749670281567, guid: 372edada7392b3e4885ea48a3d44e04d, type: 3}
 --- !u!1 &3043846178584942096
 GameObject:
   m_ObjectHideFlags: 0
@@ -12925,7 +12927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openRot: {x: 0, y: -0.9001306, z: 0, w: 0.4356202}
   interactionDistance: 6
-  lerpOpenTime: 2
+  lerpOpenTime: 1
   doorLabel: {fileID: 306524497}
 --- !u!23 &3900222194354829609
 MeshRenderer:
@@ -14577,8 +14579,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &5213224615008852138
-BoxCollider:
+--- !u!64 &5213224615008852138
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14587,9 +14589,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.010000001, y: 0.010000001, z: 0.010000001}
-  m_Center: {x: 2.3283067e-10, y: -6.9849193e-10, z: -0.000000059604645}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1364087873485794358, guid: 372edada7392b3e4885ea48a3d44e04d, type: 3}
 --- !u!23 &5262401873915888361
 MeshRenderer:
   m_ObjectHideFlags: 0
