@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager dialogueManager;
@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialogueManager = this;
-
+        gameObject.SetActive(false);
         nodesJames = Resources.LoadAll<Dialogue>("DialogueNodes/James");
         nodesGrace = Resources.LoadAll<Dialogue>("DialogueNodes/Grace");
         nodesDiane = Resources.LoadAll<Dialogue>("DialogueNodes/Diane");
