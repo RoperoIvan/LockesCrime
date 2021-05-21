@@ -70,31 +70,31 @@ public class CluesManager : MonoBehaviour
                 return;
         }
 
-        //Dialogue.Responses resp = null;
-        //foreach(Clue.UnBlockedResponse node in clue.unblockedResponses)
-        //{
-        //    if(node.character.Contains("Grace"))
-        //    {
+        Dialogue.Responses resp = null;
+        foreach (Clue.UnBlockedResponse node in clue.unblockedResponses)
+        {
+            if (node.character.Contains("Grace"))
+            {
 
-        //        resp = DialogueManager.dialogueManager.nodesGrace[node.idNode].responses[node.idResponse];
-        //        break;
-        //    }
-        //    else if(node.character.Contains("James"))
-        //    {
-        //        resp = DialogueManager.dialogueManager.nodesJames[node.idNode].responses[node.idResponse];
-        //        break;
-        //    }
-        //    else
-        //    {
-        //        resp = DialogueManager.dialogueManager.nodesDiane[node.idNode].responses[node.idResponse];
-        //        break;
-        //    }
-        //}
-        
-        //if(resp != null)
-        //{
-        //    resp.isInvisible = !resp.isInvisible;
-        //}
+                resp = DialogueManager.dialogueManager.nodesGrace[node.idNode].responses[node.idResponse];
+                break;
+            }
+            else if (node.character.Contains("James"))
+            {
+                resp = DialogueManager.dialogueManager.nodesJames[node.idNode].responses[node.idResponse];
+                break;
+            }
+            else
+            {
+                resp = DialogueManager.dialogueManager.nodesDiane[node.idNode].responses[node.idResponse];
+                break;
+            }
+        }
+
+        if (resp != null)
+        {
+            resp.isInvisible = !resp.isInvisible;
+        }
 
         GameObject newText = Instantiate(TextPrefab, CluesPage);
         newText.GetComponent<TextMeshPro>().text = clue.clueName;
