@@ -11,10 +11,11 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-
+    public static CharacterController characterController;
     public static GameObject Player;
 
     public float speed = 10.0f;
+    public bool hasInteraction = false;
     private float translation;
     private float straffe;
 
@@ -32,7 +33,11 @@ public class CharacterController : MonoBehaviour
     private bool isNotebookOpen;
     private bool isInsideTitle;
     private bool isClueSelected;
-    
+    private void Awake()
+    {
+        if (characterController == null)
+            characterController = this;
+    }
     // Use this for initialization
     void Start()
     {
@@ -44,7 +49,7 @@ public class CharacterController : MonoBehaviour
         isNotebookOpen = false;
         isInsideTitle = false;
         isClueSelected = false;
-        state = STATE.NONE;
+        state = STATE.NONE; 
         // turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -52,37 +57,41 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!hasInteraction)
+        {
+            if (state == STATE.NONE)
+            {
+                translation = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+                straffe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+                transform.Translate(straffe, 0, translation);
+            }
+
+            //if (Input.GetKeyDown("escape"))
+            //{
+            //    // turn on the cursor
+            //    Cursor.lockState = CursorLockMode.None;
+            //}
+            //notebook controllers
+            if (Input.GetKeyDown(KeyCode.RightShift))
+            {
+                StartCoroutine(NotebookManager.notebookM.TakeNotebook());
+                if (state == STATE.NOTEBOOK_OPEN)
+                    state = STATE.NONE;
+                else
+                    state = STATE.NOTEBOOK_OPEN;
+            }
+            if (state == STATE.NOTEBOOK_OPEN || state == STATE.CLUE_SELECTED)
+            {
+                NotebookMovment();
+            }
+            else if (state == STATE.INSIDE_TITLE)
+            {
+                TitleMovment();
+            }
+        }
         // Input.GetAxis() is used to get the user's input
         // You can furthor set it on Unity. (Edit, Project Settings, Input)
-        if(state == STATE.NONE)
-        {
-            translation = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-            straffe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-            transform.Translate(straffe, 0, translation);
-        }
 
-        //if (Input.GetKeyDown("escape"))
-        //{
-        //    // turn on the cursor
-        //    Cursor.lockState = CursorLockMode.None;
-        //}
-        //notebook controllers
-        if (Input.GetKeyDown(KeyCode.RightShift))
-        {
-            StartCoroutine(NotebookManager.notebookM.TakeNotebook());
-            if (state == STATE.NOTEBOOK_OPEN)
-                state = STATE.NONE;
-            else
-                state = STATE.NOTEBOOK_OPEN;
-        }
-        if (state == STATE.NOTEBOOK_OPEN || state == STATE.CLUE_SELECTED)
-        {
-            NotebookMovment();
-        }
-        else if(state == STATE.INSIDE_TITLE)
-        {
-            TitleMovment();
-        }
     }
 
     private void NotebookMovment()

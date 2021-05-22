@@ -64,6 +64,7 @@ public class Clue : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 MouseCamLook.mouseCamLook.moveCam = true;
+                CharacterController.characterController.hasInteraction = false;
                 StartCoroutine(MoveClueToOriginalPos());
                 transform.parent = null;
                 checking_clue = false;
@@ -85,6 +86,7 @@ public class Clue : MonoBehaviour
                     transform.parent = posFrontCam;
                     MouseCamLook.mouseCamLook.moveCam = false;
                     checking_clue = true;
+                    CharacterController.characterController.hasInteraction = true;
                 }
             }
         }
