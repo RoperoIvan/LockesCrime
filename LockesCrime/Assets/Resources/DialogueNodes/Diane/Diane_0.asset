@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
   m_Name: Diane_0
   m_EditorClassIdentifier: 
-  dialogues: []
-  responses: []
+  dialogues:
+  - Hi detective.
+  - What do you want?
+  responses:
+  - isInvisible: 0
+    response: What do you know about the knife?
+    dialogueNode: {fileID: 0}
+  - isInvisible: 0
+    response: Nothing.
+    dialogueNode: {fileID: 0}

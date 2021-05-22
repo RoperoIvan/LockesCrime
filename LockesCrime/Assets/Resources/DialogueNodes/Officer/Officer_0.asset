@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
   m_Name: Officer_0
   m_EditorClassIdentifier: 
-  dialogues: []
-  responses: []
+  dialogues:
+  - Hi, partner.
+  - How 'you doing?
+  responses:
+  - isInvisible: 0
+    response: Hi, partner.
+    dialogueNode: {fileID: 0}
+  - isInvisible: 0
+    response: Im, good.
+    dialogueNode: {fileID: 0}

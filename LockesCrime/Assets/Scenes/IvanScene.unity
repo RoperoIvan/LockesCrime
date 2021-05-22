@@ -673,6 +673,8 @@ MonoBehaviour:
   nodesJames: []
   nodesGrace: []
   nodesDiane: []
+  nodesOfficer: []
+  nodesSheriff: []
 --- !u!1 &194357297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,11 +4620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.331
+      value: -15.330994
       objectReference: {fileID: 0}
     - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.331
+      value: 0.33099365
       objectReference: {fileID: 0}
     - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4659,6 +4661,14 @@ PrefabInstance:
     - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851198726983998806, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: inputField

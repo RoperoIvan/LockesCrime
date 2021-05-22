@@ -13,10 +13,12 @@ public class DialogueManager : MonoBehaviour
     public GameObject responsePrefab;
     public TMP_Text dialogueTxt;
 
-    private Dialogue[] lastDialogueNodes = new Dialogue[3]; //0: James, 1: Grace, 2: Diane
+    private Dialogue[] lastDialogueNodes = new Dialogue[5]; //0: James, 1: Grace, 2: Diane, 3: Officer, 4: Sheriff
     public Dialogue[] nodesJames;
     public Dialogue[] nodesGrace;
     public Dialogue[] nodesDiane;
+    public Dialogue[] nodesOfficer;
+    public Dialogue[] nodesSheriff;
 
     private int currentChar;
 
@@ -33,6 +35,8 @@ public class DialogueManager : MonoBehaviour
         nodesJames = Resources.LoadAll<Dialogue>("DialogueNodes/James");
         nodesGrace = Resources.LoadAll<Dialogue>("DialogueNodes/Grace");
         nodesDiane = Resources.LoadAll<Dialogue>("DialogueNodes/Diane");
+        nodesOfficer = Resources.LoadAll<Dialogue>("DialogueNodes/Officer");
+        nodesSheriff = Resources.LoadAll<Dialogue>("DialogueNodes/Sheriff");
     }
     public void RefreshDialogueContainer(int character)
     {
@@ -54,6 +58,12 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case 2:
                     charNodes = nodesDiane;
+                    break;
+                case 3:
+                    charNodes = nodesOfficer;
+                    break;
+                case 4:
+                    charNodes = nodesSheriff;
                     break;
                 default:
                     break;

@@ -54,6 +54,11 @@ public class Doors : MonoBehaviour
         else
             doorLabel.SetActive(false);
     }
+
+    private void OnMouseExit()
+    {
+        doorLabel.SetActive(false);
+    }
     IEnumerator MoveDoor()
     {
         float timeElapsed = 0;

@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
   m_Name: Sheriff_0
   m_EditorClassIdentifier: 
-  dialogues: []
-  responses: []
+  dialogues:
+  - Well detective, who do you think it is?
+  - Any thoughts?
+  responses:
+  - isInvisible: 0
+    response: It's James.
+    dialogueNode: {fileID: 0}
+  - isInvisible: 0
+    response: It's Diane.
+    dialogueNode: {fileID: 0}
+  - isInvisible: 0
+    response: It's Grace.
+    dialogueNode: {fileID: 0}
