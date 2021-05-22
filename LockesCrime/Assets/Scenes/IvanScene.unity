@@ -1827,7 +1827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1509741205284922347, guid: 44c404c905b17e14ea1a1ea6bd4fd6ac, type: 3}
       propertyPath: m_Name
-      value: AI_Prop_Body_OnFloor_01
+      value: JohnDeadChar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44c404c905b17e14ea1a1ea6bd4fd6ac, type: 3}
@@ -3171,7 +3171,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100066, guid: 5d39e79d23613634bb7d4085aba7f31f, type: 3}
       propertyPath: m_Name
-      value: SimplePeople_Sheriff_Brown
+      value: SheriffChar
       objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: 5d39e79d23613634bb7d4085aba7f31f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3217,8 +3217,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 5d39e79d23613634bb7d4085aba7f31f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 21b05d8ec67e6e546ad375d40e2e491e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d39e79d23613634bb7d4085aba7f31f, type: 3}
+--- !u!1 &740661832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100066, guid: 5d39e79d23613634bb7d4085aba7f31f, type: 3}
+  m_PrefabInstance: {fileID: 740661831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &740661833
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740661832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.724185
+  m_Height: 3.3601136
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.33, z: 0}
+--- !u!114 &740661834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740661832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1030290fe4a976e49a57157c95cd5b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 2
+  player: {fileID: 1193001475}
+  interactGO: {fileID: 1874243758}
+  dManager: {fileID: 192729683}
+  character: 4
 --- !u!1 &773408239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5058,7 +5098,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100066, guid: 4f2d47505ddfc604a9f702e0599aa2ed, type: 3}
       propertyPath: m_Name
-      value: SimplePeople_Police_Black
+      value: OfficerChar
       objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: 4f2d47505ddfc604a9f702e0599aa2ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5104,8 +5144,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 4f2d47505ddfc604a9f702e0599aa2ed, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a64d7a292023255439ab0da526391217, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f2d47505ddfc604a9f702e0599aa2ed, type: 3}
+--- !u!1 &1375495822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100066, guid: 4f2d47505ddfc604a9f702e0599aa2ed, type: 3}
+  m_PrefabInstance: {fileID: 1375495821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1375495823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375495822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1030290fe4a976e49a57157c95cd5b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 2
+  player: {fileID: 1193001475}
+  interactGO: {fileID: 1874243758}
+  dManager: {fileID: 192729683}
+  character: 3
+--- !u!136 &1375495824
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375495822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.724185
+  m_Height: 3.3601136
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.33, z: 0}
 --- !u!1 &1396803144
 GameObject:
   m_ObjectHideFlags: 0

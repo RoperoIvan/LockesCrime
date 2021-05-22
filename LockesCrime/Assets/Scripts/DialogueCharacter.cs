@@ -48,6 +48,8 @@ public class DialogueCharacter : MonoBehaviour
     {
         JAMES,
         GRACE,
-        DIANE
+        DIANE,
+        OFFICER,
+        SHERIFF
     }
 }
