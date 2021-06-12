@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Clue : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Clue : MonoBehaviour
 
     private void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         initPos = transform.position;
     }
 
@@ -61,18 +63,22 @@ public class Clue : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right) * Quaternion.AngleAxis(mouseLook.x, Vector3.up);
 
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 MouseCamLook.mouseCamLook.moveCam = true;
                 CharacterController.characterController.hasInteraction = false;
                 StartCoroutine(MoveClueToOriginalPos());
                 transform.parent = null;
                 checking_clue = false;
+                DontDestroyOnLoad(this.gameObject);
+
             }
         }
     }
     private void OnMouseOver()
     {
+        if (!SceneManager.GetSceneByBuildIndex(1).isLoaded)
+            return;
 
         if (Vector3.Distance(transform.position, player.transform.position) < interactionDistance)
         {
@@ -87,6 +93,7 @@ public class Clue : MonoBehaviour
                     MouseCamLook.mouseCamLook.moveCam = false;
                     checking_clue = true;
                     CharacterController.characterController.hasInteraction = true;
+
                 }
             }
         }
@@ -96,6 +103,8 @@ public class Clue : MonoBehaviour
 
     private void OnMouseExit()
     {
+        if (!SceneManager.GetSceneByBuildIndex(1).isLoaded)
+            return;
         interactGO.SetActive(false);
     }
 
@@ -139,5 +148,6 @@ public class Clue : MonoBehaviour
 
         transform.position = initPos;
         transform.rotation = initRotation;
+
     }
 }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IvanScene.unity
     guid: 6424434618e46874391d0df83262f4ee
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 5bdf95a08e763de4ebd3ebb2014ed278
   m_configObjects: {}

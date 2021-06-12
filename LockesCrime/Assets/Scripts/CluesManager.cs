@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class CluesManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class CluesManager : MonoBehaviour
     struct histories
     {
         public string guilty;
+        public string descrition;
         public List<GameObject> clues;
     }
 
@@ -29,6 +31,10 @@ public class CluesManager : MonoBehaviour
 
     private List<Clue> cluesSaved;
 
+    private List<GameObject> cluesFounded;
+
+    private int history;
+
     void Awake()
     {
         if (CluesM != null)
@@ -38,26 +44,33 @@ public class CluesManager : MonoBehaviour
         }
 
         CluesM = this;
+
+        DontDestroyOnLoad(this.gameObject);
+
     }
     // Start is called before the first frame update
     void Start()
     {
         cluesSaved = new List<Clue>();
+        cluesFounded = new List<GameObject>();
         selectHistoy();
     }
 
     void selectHistoy()
     {
-        int randNum = Random.Range(0, historyBranches.Count);
+        history = Random.Range(0, historyBranches.Count);
 
-       for(int i = 0; i < historyBranches[randNum].clues.Count; ++i){
-            historyBranches[randNum].clues[i].SetActive(true);
+       for(int i = 0; i < historyBranches[history].clues.Count; ++i){
+            historyBranches[history].clues[i].SetActive(true);
         }
     }
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.C) && SceneManager.GetSceneByBuildIndex(1).isLoaded)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void OnCol(Clue clue)
@@ -99,5 +112,25 @@ public class CluesManager : MonoBehaviour
         GameObject newText = Instantiate(TextPrefab, CluesPage);
         newText.GetComponent<TextMeshPro>().text = clue.clueName;
         cluesSaved.Add(clue);
+        cluesFounded.Add(clue.gameObject);
+    }
+
+    public string getDescription()
+    {
+        return historyBranches[history].descrition;
+    }
+
+    public string getGuilty()
+    {
+        return historyBranches[history].guilty;
+    }
+
+    public List<GameObject> getCluesSaved()
+    {
+        return cluesFounded;
+    }
+
+    public List<GameObject> getClues() { 
+        return historyBranches[history].clues;
     }
 }

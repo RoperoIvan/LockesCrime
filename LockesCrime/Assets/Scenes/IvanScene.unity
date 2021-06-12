@@ -2526,6 +2526,10 @@ PrefabInstance:
       propertyPath: historyBranches.Array.data[0].clues.Array.data[2]
       value: 
       objectReference: {fileID: 1852231380}
+    - target: {fileID: 205528923668981170, guid: d79efa0023d199e42bb5b59aa16441db, type: 3}
+      propertyPath: NoteBook
+      value: 
+      objectReference: {fileID: 1274130116}
     - target: {fileID: 205528923668981180, guid: d79efa0023d199e42bb5b59aa16441db, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -4902,6 +4906,11 @@ Transform:
   m_Father: {fileID: 576001931}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1274130116 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3219669198381141002, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+  m_PrefabInstance: {fileID: 1193001473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1281040342
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,15 +5975,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4692073063608152954, guid: e6b59cfc7f6adf94781d310cb4f90c5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.602
+      value: -15.575
       objectReference: {fileID: 0}
     - target: {fileID: 4692073063608152954, guid: e6b59cfc7f6adf94781d310cb4f90c5f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.802
+      value: 1.067
       objectReference: {fileID: 0}
     - target: {fileID: 4692073063608152954, guid: e6b59cfc7f6adf94781d310cb4f90c5f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.333
+      value: 8.097
       objectReference: {fileID: 0}
     - target: {fileID: 4692073063608152954, guid: e6b59cfc7f6adf94781d310cb4f90c5f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6010,7 +6019,7 @@ PrefabInstance:
       objectReference: {fileID: 1193001475}
     - target: {fileID: 4692073063608152955, guid: e6b59cfc7f6adf94781d310cb4f90c5f, type: 3}
       propertyPath: clueName
-      value: Photo9
+      value: Photo10
       objectReference: {fileID: 0}
     - target: {fileID: 4692073063608152955, guid: e6b59cfc7f6adf94781d310cb4f90c5f, type: 3}
       propertyPath: interactGO
@@ -6026,7 +6035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4692073063608152958, guid: e6b59cfc7f6adf94781d310cb4f90c5f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4692073063608152959, guid: e6b59cfc7f6adf94781d310cb4f90c5f, type: 3}
       propertyPath: m_Enabled
