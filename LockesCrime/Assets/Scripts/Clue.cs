@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Clue : MonoBehaviour
 {
@@ -41,6 +42,9 @@ public class Clue : MonoBehaviour
     // get the incremental value of mouse moving
     private Vector2 mouseLook;
 
+    [SerializeField]
+    private GameObject textUI;
+
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -70,6 +74,7 @@ public class Clue : MonoBehaviour
                 StartCoroutine(MoveClueToOriginalPos());
                 transform.parent = null;
                 checking_clue = false;
+                textUI.transform.parent.parent.gameObject.SetActive(false);
                 DontDestroyOnLoad(this.gameObject);
 
             }
@@ -93,6 +98,8 @@ public class Clue : MonoBehaviour
                     MouseCamLook.mouseCamLook.moveCam = false;
                     checking_clue = true;
                     CharacterController.characterController.hasInteraction = true;
+                    textUI.GetComponent<TMP_Text>().text = description;
+                    textUI.transform.parent.parent.gameObject.SetActive(true);
 
                 }
             }
