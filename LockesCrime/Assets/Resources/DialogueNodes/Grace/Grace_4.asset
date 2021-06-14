@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
-  m_Name: Grace_2
+  m_Name: Grace_4
   m_EditorClassIdentifier: 
   dialogues:
-  - "\xBFDe verdad cree que ser\xEDa tan est\xFApida"
-  - como para dejar el cuchillo ensangrentado
-  - entre mis propias pertenencias?
+  - "S\xED, son m\xEDos."
+  - "Los compr\xE9 hace un tiempo ya."
+  - "Me hice un regalo por mi cumplea\xF1os"
   responses:
   - isInvisible: 0
-    response: "Hmm... podr\xEDa tener sentido"
+    response: Ya veo.
     dialogueNode: {fileID: 11400000, guid: 4c8c2eb968db9924496c952aee430b50, type: 2}

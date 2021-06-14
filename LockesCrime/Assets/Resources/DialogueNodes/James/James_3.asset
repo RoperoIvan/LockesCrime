@@ -10,13 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
-  m_Name: John_2
+  m_Name: James_3
   m_EditorClassIdentifier: 
-  dialogues:
-  - Intentalo caranchoa.
-  - A ver si te lo voy a dar yo.
-  responses:
-  - response: Prueba caraculo.
-    dialogueNode: {fileID: 0}
-  - response: Perdon me pase.
-    dialogueNode: {fileID: 0}
+  dialogues: []
+  responses: []

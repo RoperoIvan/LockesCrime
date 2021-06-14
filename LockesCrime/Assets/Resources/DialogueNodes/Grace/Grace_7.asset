@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
+  m_Name: Grace_7
+  m_EditorClassIdentifier: 
+  dialogues:
+  - Por la tarde fuimos a dar un paseo los 4.
+  - Alrededor de las 8 cenamos juntos.
+  - "Despu\xE9s estuvimos hablando y bebiendo"
+  - hasta las 12:15.
+  - "Poco despu\xE9s Diane se fue a dormir."
+  - "Y a la media hora yo me fui tambi\xE9n."
+  - John y James se quedaron bebiendo en
+  - "el comedor. De madrugada los escuch\xE9"
+  - "discutiendo y sal\xED a ver que ocurr\xEDa."
+  - "Estaban hablando sobre el \xFAltimo partido"
+  - "que hab\xEDan visto."
+  - "Despu\xE9s me despertaron los gritos de Diane."
+  - "Y a partir de ah\xED todo se vuelve un poco borroso."
+  responses:
+  - isInvisible: 0
+    response: "\xBFAlgo m\xE1s que contar?"
+    dialogueNode: {fileID: 11400000, guid: 434993c38687cc14096530a583f63ebf, type: 2}

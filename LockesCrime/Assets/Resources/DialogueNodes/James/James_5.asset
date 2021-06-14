@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
+  m_Name: James_5
+  m_EditorClassIdentifier: 
+  dialogues:
+  - Pues fue todo bastante normal.
+  - A eso de las 8 cenamos.
+  - "Despu\xE9s nos pusimos a beber y bromear"
+  - como cada noche hasta que a eso de las
+  - "12 Diane se fue a dormir y poco despu\xE9s"
+  - "Grace tambi\xE9n lo hizo."
+  - John y yo nos quedamos hablando hasta
+  - "las 2 cuando Grace nos hech\xF3 la bronca"
+  - por hacer ruido mientras hablabamos
+  - "sobre el \xFAltimo partido de rugby que vimos."
+  - "M\xE1s tarde Diane nos despert\xF3 con sus gritos."
+  responses:
+  - isInvisible: 0
+    response: "De acuerdo, \xBFalgo m\xE1s?"
+    dialogueNode: {fileID: 11400000, guid: f0827ed1092b8924bb3d7283769b9441, type: 2}

@@ -13,11 +13,24 @@ MonoBehaviour:
   m_Name: Grace_0
   m_EditorClassIdentifier: 
   dialogues:
-  - Hello!
+  - Hola detective,
+  - "\xBFnecesita ayuda con algo?"
   responses:
   - isInvisible: 1
-    response: Hi!
+    response: "He encontrado este cuchillo en su habitaci\xF3n, sabe algo?"
     dialogueNode: {fileID: 11400000, guid: c0858bb99fc69e7458c93d426d6adf79, type: 2}
   - isInvisible: 0
-    response: Goodbye!
+    response: Nada, gracias.
     dialogueNode: {fileID: 0}
+  - isInvisible: 1
+    response: "Hab\xEDa un test de embarazo positivo, \xBFsabe algo?"
+    dialogueNode: {fileID: 11400000, guid: 33256f7bf569268418da1558008083d0, type: 2}
+  - isInvisible: 1
+    response: "Encontr\xE9 unos pendientes que parec\xEDan nuevos."
+    dialogueNode: {fileID: 11400000, guid: 3f04d30704e6a3c409c91c36ce225fc9, type: 2}
+  - isInvisible: 1
+    response: "Hab\xEDa una factura de unos pendientes."
+    dialogueNode: {fileID: 11400000, guid: 4bebd54f74be06b40bd71cc5b8a8135c, type: 2}
+  - isInvisible: 0
+    response: "\xBFPuede contarme que hizo ayer por la noche?"
+    dialogueNode: {fileID: 11400000, guid: 85c038645c33d764cb3f61cf75e0aa55, type: 2}

@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Grace_3
   m_EditorClassIdentifier: 
   dialogues:
-  - What happened?
+  - "\xBFUn test de embarazo?"
+  - No me suena la verdad.
+  - "No se de quien podr\xEDa ser..."
   responses:
   - isInvisible: 0
-    response: Nothing, bye!
-    dialogueNode: {fileID: 0}
-  - isInvisible: 0
-    response: Shut up!
-    dialogueNode: {fileID: 0}
+    response: Hmm... entiendo.
+    dialogueNode: {fileID: 11400000, guid: 4c8c2eb968db9924496c952aee430b50, type: 2}

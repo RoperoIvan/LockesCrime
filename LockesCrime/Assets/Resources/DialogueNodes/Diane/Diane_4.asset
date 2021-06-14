@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
-  m_Name: John_1
+  m_Name: Diane_4
   m_EditorClassIdentifier: 
   dialogues:
-  - Lo siento, me exsedi.
-  - Me perdona uste?
+  - No es algo que me regalara John.
+  - "Hac\xEDa tiempo que ten\xEDamos problemas."
+  - Discutiamos mucho.
+  - "Veo que son pendientes, no creo que fueran para m\xED."
   responses:
-  - response: Si.
-    dialogueNode: {fileID: 0}
-  - response: No.
-    dialogueNode: {fileID: 0}
+  - isInvisible: 0
+    response: Entiendo...
+    dialogueNode: {fileID: 11400000, guid: e53ac430e67658c4eacb34e2bf895cc7, type: 2}

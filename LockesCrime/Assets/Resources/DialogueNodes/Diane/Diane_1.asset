@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
-  m_Name: Grace_2
+  m_Name: Diane_1
   m_EditorClassIdentifier: 
   dialogues:
-  - "\xBFDe verdad cree que ser\xEDa tan est\xFApida"
-  - como para dejar el cuchillo ensangrentado
-  - entre mis propias pertenencias?
+  - Nose de que cuchillo me habla.
   responses:
   - isInvisible: 0
-    response: "Hmm... podr\xEDa tener sentido"
-    dialogueNode: {fileID: 11400000, guid: 4c8c2eb968db9924496c952aee430b50, type: 2}
+    response: "Lo he encontrado en la habitaci\xF3n de Grace."
+    dialogueNode: {fileID: 11400000, guid: 47f4197e24e4f4f4b9bf12c83c52acc8, type: 2}
+  - isInvisible: 0
+    response: 
+    dialogueNode: {fileID: 0}

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2d36eb74e6e5334d92e4b9f0eb5e708, type: 3}
-  m_Name: John_0
+  m_Name: Grace_8
   m_EditorClassIdentifier: 
   dialogues:
-  - Eres un tonto del culo.
-  - Y te huele el pito fatal.
+  - "No estoy segura pero, creo haber o\xEDdo a alguien"
+  - "salir de su habitaci\xF3n en alg\xFAn momento"
+  - de la noche.
   responses:
-  - response: Me isiste llorar.
-    dialogueNode: {fileID: 11400000, guid: f0827ed1092b8924bb3d7283769b9441, type: 2}
-  - response: Te voy a enchufar un correctivo.
-    dialogueNode: {fileID: 11400000, guid: 9b4ec26d505d49c4c98530c872941e49, type: 2}
+  - isInvisible: 0
+    response: De acuerdo, gracias.
+    dialogueNode: {fileID: 11400000, guid: 4c8c2eb968db9924496c952aee430b50, type: 2}

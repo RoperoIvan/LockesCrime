@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Grace_1
   m_EditorClassIdentifier: 
   dialogues:
-  - How are you?
+  - "\xA1\xBFUn cuchillo?!"
+  - "\xBFEn nuestra habitaci\xF3n?"
+  - "\xA1Nose como ha podido llegar hasta all\xED!"
+  - "James y yo no salimos de la habitaci\xF3n"
+  - en toda la noche.
   responses:
-  - response: Fine, and you?
+  - isInvisible: 0
+    response: Y que dice del cuchillo, estaba entre sus cosas.
     dialogueNode: {fileID: 11400000, guid: 45c591f87799bac4eb308ce15af76392, type: 2}
-  - response: Bad, you?
-    dialogueNode: {fileID: 11400000, guid: 33256f7bf569268418da1558008083d0, type: 2}

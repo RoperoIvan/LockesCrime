@@ -13,12 +13,24 @@ MonoBehaviour:
   m_Name: Diane_0
   m_EditorClassIdentifier: 
   dialogues:
-  - Hi detective.
-  - What do you want?
+  - Hola detective.
+  - "\xBFQue quer\xEDa?"
   responses:
+  - isInvisible: 1
+    response: "\xBFQu\xE9 sabe sobre el cuchillo?"
+    dialogueNode: {fileID: 11400000, guid: b1dc4ebbfbe10c2458807899a6692b23, type: 2}
   - isInvisible: 0
-    response: What do you know about the knife?
+    response: Nada.
     dialogueNode: {fileID: 0}
+  - isInvisible: 1
+    response: "\xBFLe suena este test de embarazo?"
+    dialogueNode: {fileID: 11400000, guid: 24d0cbe09d507df4f86970770848ea3e, type: 2}
+  - isInvisible: 1
+    response: "Estos pendientes son nuevos, \xBFsabe algo?"
+    dialogueNode: {fileID: 11400000, guid: 02c49026620d1d54b90be1d59275a212, type: 2}
+  - isInvisible: 1
+    response: He encontrado esta factura, le suena de algo?
+    dialogueNode: {fileID: 11400000, guid: 1c9737685a21d99478a3d45aa2d696b0, type: 2}
   - isInvisible: 0
-    response: Nothing.
-    dialogueNode: {fileID: 0}
+    response: "Cu\xE9nteme que hizo ayer, por favor."
+    dialogueNode: {fileID: 11400000, guid: c1788fc63d488044bb55b9c926ae6387, type: 2}
