@@ -27,4 +27,4 @@ MonoBehaviour:
   responses:
   - isInvisible: 0
     response: "De acuerdo, \xBFalgo m\xE1s?"
-    dialogueNode: {fileID: 11400000, guid: f0827ed1092b8924bb3d7283769b9441, type: 2}
+    dialogueNode: {fileID: 11400000, guid: 5d56ec81861f0d54397c5b064961d29b, type: 2}

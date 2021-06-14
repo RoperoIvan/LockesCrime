@@ -2638,7 +2638,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueName: Test positivo
   description: test de embarazo positivo, de quien sera?
-  unblockedResponses: []
+  unblockedResponses:
+  - character: 0
+    idNode: 0
+    idResponse: 2
+  - character: 1
+    idNode: 0
+    idResponse: 2
+  - character: 1
+    idNode: 0
+    idResponse: 2
   interactionDistance: 20
   player: {fileID: 1193001475}
   interactGO: {fileID: 306524497}
@@ -4808,6 +4817,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 690748226752918504, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 690748227293673846, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
       propertyPath: m_Name
       value: Earrings with gem (1)
@@ -8362,7 +8375,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueName: pendientes
   description: estos pendientes estan casi nuevos y parecen caros
-  unblockedResponses: []
+  unblockedResponses:
+  - character: 0
+    idNode: 0
+    idResponse: 0
+  - character: 1
+    idNode: 0
+    idResponse: 0
+  - character: 2
+    idNode: 0
+    idResponse: 0
   interactionDistance: 15
   player: {fileID: 1193001475}
   interactGO: {fileID: 306524497}
