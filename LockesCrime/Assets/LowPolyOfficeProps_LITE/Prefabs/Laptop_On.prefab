@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33384098434499110}
   - component: {fileID: 23394668275559980}
   - component: {fileID: 65200176653086256}
-  - component: {fileID: 320360103}
   m_Layer: 0
   m_Name: Laptop_On
   m_TagString: Untagged
@@ -96,26 +95,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4128768, y: 0.2859333, z: 0.3141266}
   m_Center: {x: 0, y: 0.160399, z: -0.017604299}
---- !u!114 &320360103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382680370001608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4167a5d131d070c46979010c20ed378e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clueName: 'Correos '
-  description: correos picantes en el ordenador deJhon
-  unblockedResponses: []
-  interactionDistance: 10
-  player: {fileID: 0}
-  interactGO: {fileID: 0}
-  posFrontCam: {fileID: 0}
-  sensitivity: 5
-  smoothing: 2
-  angleClamp: 90
-  textUI: {fileID: 0}
