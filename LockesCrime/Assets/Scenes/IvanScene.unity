@@ -3513,7 +3513,6 @@ GameObject:
   - component: {fileID: 700762747}
   - component: {fileID: 700762750}
   - component: {fileID: 700762749}
-  - component: {fileID: 700762748}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -3535,19 +3534,6 @@ Transform:
   m_Father: {fileID: 820863804}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 91.199, z: 0}
---- !u!65 &700762748
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700762746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &700762749
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4383,7 +4369,6 @@ GameObject:
   - component: {fileID: 820863804}
   - component: {fileID: 820863807}
   - component: {fileID: 820863806}
-  - component: {fileID: 820863805}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4407,19 +4392,6 @@ Transform:
   m_Father: {fileID: 529332074}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &820863805
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820863803}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &820863806
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9196,7 +9168,6 @@ GameObject:
   - component: {fileID: 2099874599}
   - component: {fileID: 2099874602}
   - component: {fileID: 2099874601}
-  - component: {fileID: 2099874600}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -9218,19 +9189,6 @@ Transform:
   m_Father: {fileID: 820863804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2099874600
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099874598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2099874601
 MeshRenderer:
   m_ObjectHideFlags: 0
