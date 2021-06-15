@@ -67,7 +67,10 @@ public class CluesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.C) && SceneManager.GetSceneByBuildIndex(1).isLoaded)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void OnCol(Clue clue)
