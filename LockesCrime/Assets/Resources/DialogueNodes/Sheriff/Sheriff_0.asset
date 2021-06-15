@@ -25,3 +25,6 @@ MonoBehaviour:
   - isInvisible: 0
     response: It's Grace.
     dialogueNode: {fileID: 0}
+  - isInvisible: 0
+    response: I'm not sure yet.
+    dialogueNode: {fileID: 0}
