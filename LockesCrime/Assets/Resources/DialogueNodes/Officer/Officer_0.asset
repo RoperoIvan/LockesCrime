@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Officer_0
   m_EditorClassIdentifier: 
   dialogues:
-  - Hi, partner.
-  - How 'you doing?
+  - "Hey compa\xF1ero."
+  - "\xBFC\xF3mo andas?"
   responses:
   - isInvisible: 0
-    response: Hi, partner.
+    response: Hola agente.
     dialogueNode: {fileID: 0}
   - isInvisible: 0
-    response: Im, good.
+    response: Estoy bien, tirando.
     dialogueNode: {fileID: 0}

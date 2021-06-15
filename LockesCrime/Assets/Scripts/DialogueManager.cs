@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject responseContainer;
     public GameObject responsePrefab;
     public TMP_Text dialogueTxt;
+    public TMP_Text nameTxt;
 
     private Dialogue[] lastDialogueNodes = new Dialogue[5]; //0: James, 1: Grace, 2: Diane, 3: Officer, 4: Sheriff
     public Dialogue[] nodesJames;
@@ -53,18 +54,23 @@ public class DialogueManager : MonoBehaviour
             {
                 case 0:
                     charNodes = nodesJames;
+                    nameTxt.text = "James";
                     break;
                 case 1:
                     charNodes = nodesGrace;
+                    nameTxt.text = "Grace";
                     break;
                 case 2:
                     charNodes = nodesDiane;
+                    nameTxt.text = "Diane";
                     break;
                 case 3:
                     charNodes = nodesOfficer;
+                    nameTxt.text = "Officer";
                     break;
                 case 4:
                     charNodes = nodesSheriff;
+                    nameTxt.text = "Sheriff";
                     break;
                 default:
                     break;

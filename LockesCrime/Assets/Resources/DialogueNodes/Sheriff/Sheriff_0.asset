@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Sheriff_0
   m_EditorClassIdentifier: 
   dialogues:
-  - Well detective, who do you think it is?
-  - Any thoughts?
+  - "Bueno detective, \xBFqui\xE9n crees que lo ha hecho?"
+  - "\xBFAlguna idea?"
   responses:
   - isInvisible: 0
-    response: It's James.
+    response: Lo hizo James.
     dialogueNode: {fileID: 0}
   - isInvisible: 0
-    response: It's Diane.
+    response: Lo hizo Diane.
     dialogueNode: {fileID: 0}
   - isInvisible: 0
-    response: It's Grace.
+    response: Lo hizo Grace.
     dialogueNode: {fileID: 0}
   - isInvisible: 0
-    response: I'm not sure yet.
+    response: "A\xFAn no estoy seguro."
     dialogueNode: {fileID: 0}
