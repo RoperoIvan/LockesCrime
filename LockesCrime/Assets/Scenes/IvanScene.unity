@@ -658,7 +658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDialogueNode: {fileID: 11400000, guid: 4dd489f96632dcd43a041ba1650c05e1, type: 2}
   responseContainer: {fileID: 1553943991}
-  responsePrefab: {fileID: 152542039794080180, guid: 4deb8d537ce4cfe449e8dc4997b30447, type: 3}
+  responsePrefab: {fileID: 3338874667142109522, guid: b838f0413d2e74b4694720f5bec00f47, type: 3}
   dialogueTxt: {fileID: 1072767081}
   nodesJames: []
   nodesGrace: []
@@ -1394,7 +1394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: -151}
+  m_AnchoredPosition: {x: 0, y: -151}
   m_SizeDelta: {x: 373.37, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306524499
@@ -1444,14 +1444,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4901,8 +4901,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: -58}
-  m_SizeDelta: {x: -100, y: 50}
+  m_AnchoredPosition: {x: -12.949998, y: -50}
+  m_SizeDelta: {x: -66.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072767081
 MonoBehaviour:
@@ -4951,8 +4951,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6663,7 +6663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -400, y: -46.9}
+  m_AnchoredPosition: {x: 0, y: -46.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553943993
@@ -6683,8 +6683,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 10
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 10
+  m_ChildAlignment: 1
+  m_Spacing: 2
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -7104,8 +7104,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.4199829, y: -105}
-  m_SizeDelta: {x: 469.56006, y: 15.370003}
+  m_AnchoredPosition: {x: 0, y: -62.45}
+  m_SizeDelta: {x: 0, y: -35.100002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623940290
 MonoBehaviour:
@@ -8197,14 +8197,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8263,7 +8263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -307}
+  m_AnchoredPosition: {x: 0, y: -172}
   m_SizeDelta: {x: 236.89, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1877170586 stripped

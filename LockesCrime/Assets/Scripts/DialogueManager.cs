@@ -78,9 +78,9 @@ public class DialogueManager : MonoBehaviour
         {
             GameObject newResponse = Instantiate(responsePrefab, responseContainer.transform);
             Dialogue nDial = currentDialogueNode.responses[i].dialogueNode;
-            int charac = i;
+            int charc = i;
             if(nDial == null)
-                newResponse.GetComponent<Button>().onClick.AddListener(() => { CloseDialogue(currentDialogueNode); });
+                newResponse.GetComponent<Button>().onClick.AddListener(() => { CloseDialogue(currentDialogueNode, charc); });
             else
                 newResponse.GetComponent<Button>().onClick.AddListener(() => { GoToNextNode(nDial); });
 
@@ -103,7 +103,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(RevealText(currentDialogueNode.dialogues));
     }
 
-    public void CloseDialogue(Dialogue dial)
+    public void CloseDialogue(Dialogue dial, int resp)
     {
         CleanResponses();
         lastDialogueNodes[currentChar] = currentDialogueNode;
@@ -113,7 +113,8 @@ public class DialogueManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         if(dial.name.Equals("Sheriff_0"))
         {
-            SceneManager.LoadScene("FinalScene");
+            if(resp != 3)
+                SceneManager.LoadScene("FinalScene");
         }
 
         gameObject.SetActive(false);
@@ -133,8 +134,9 @@ public class DialogueManager : MonoBehaviour
         {
             GameObject newResponse = Instantiate(responsePrefab, responseContainer.transform);
             Dialogue nDial = currentDialogueNode.responses[i].dialogueNode;
+            int charc = i;
             if (nDial == null)
-                newResponse.GetComponent<Button>().onClick.AddListener(() => { CloseDialogue(currentDialogueNode); });
+                newResponse.GetComponent<Button>().onClick.AddListener(() => { CloseDialogue(currentDialogueNode, charc); });
             else
                 newResponse.GetComponent<Button>().onClick.AddListener(() => { GoToNextNode(nDial); });
             newResponse.transform.GetChild(0).GetComponent<TMP_Text>().text = currentDialogueNode.responses[i].response;
