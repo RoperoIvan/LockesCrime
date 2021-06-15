@@ -642,7 +642,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192729683
 MonoBehaviour:
@@ -1208,7 +1208,8 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 5.6432183e-16
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 281154153, guid: 1f1181424ea20d64ea8a1054356fb358, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f1181424ea20d64ea8a1054356fb358, type: 3}
 --- !u!1 &281154152 stripped
 GameObject:
@@ -1229,7 +1230,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueName: Maletin cerrado
   description: dentro del maletin hay una factura de una joyeria.
-  unblockedResponses: []
+  unblockedResponses:
+  - character: 0
+    idNode: 0
+    idResponse: 4
+  - character: 1
+    idNode: 0
+    idResponse: 4
+  - character: 2
+    idNode: 0
+    idResponse: 4
   interactionDistance: 10
   player: {fileID: 1193001475}
   interactGO: {fileID: 306524497}
@@ -1598,10 +1608,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laptop_On
       objectReference: {fileID: 0}
-    - target: {fileID: 1382680370001608, guid: 112cc81e36e745449bf229e4dbb3e073, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4225381643663648, guid: 112cc81e36e745449bf229e4dbb3e073, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.629
@@ -1646,22 +1652,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4225381643663648, guid: 112cc81e36e745449bf229e4dbb3e073, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.3051
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225381643663648, guid: 112cc81e36e745449bf229e4dbb3e073, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.3051
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225381643663648, guid: 112cc81e36e745449bf229e4dbb3e073, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.3051
-      objectReference: {fileID: 0}
-    - target: {fileID: 65200176653086256, guid: 112cc81e36e745449bf229e4dbb3e073, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112cc81e36e745449bf229e4dbb3e073, type: 3}
 --- !u!1 &320360102 stripped
@@ -1669,29 +1659,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1382680370001608, guid: 112cc81e36e745449bf229e4dbb3e073, type: 3}
   m_PrefabInstance: {fileID: 320360101}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &320360103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320360102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4167a5d131d070c46979010c20ed378e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clueName: 'Correos '
-  description: correos picantes en el ordenador deJhon
-  unblockedResponses: []
-  interactionDistance: 10
-  player: {fileID: 1193001475}
-  interactGO: {fileID: 306524497}
-  posFrontCam: {fileID: 1169702225}
-  sensitivity: 5
-  smoothing: 2
-  angleClamp: 90
-  textUI: {fileID: 1072767079}
 --- !u!1 &322826622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1921,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 376.386
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 381927441, guid: 25ca339fb22a5a546a6255d27ffaa56d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 25ca339fb22a5a546a6255d27ffaa56d, type: 3}
 --- !u!1 &381927440 stripped
 GameObject:
@@ -1974,8 +1942,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clueName: Cuchillo
-  description: It's a photo
-  unblockedResponses: []
+  description: Parece que es el arma homicida
+  unblockedResponses:
+  - character: 0
+    idNode: 0
+    idResponse: 0
+  - character: 1
+    idNode: 0
+    idResponse: 0
+  - character: 2
+    idNode: 0
+    idResponse: 0
   interactionDistance: 10
   player: {fileID: 1193001475}
   interactGO: {fileID: 306524497}
@@ -4819,7 +4796,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 690748226752918504, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 690748227293673846, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
       propertyPath: m_Name
@@ -4887,6 +4864,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 690748227278385654, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
+    - {fileID: 1877170587, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
+    - {fileID: 1877170588, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
 --- !u!1 &1072767079
 GameObject:
@@ -7166,75 +7145,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623940288}
   m_CullTransparentMesh: 0
---- !u!1001 &1640027838
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1877170589}
-    m_Modifications:
-    - target: {fileID: 690748227293673846, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_Name
-      value: Earrings with gem
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.4213451
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.915557
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.6447116
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.41289106
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.09081946
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.00000029802322
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.90624106
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -77.595
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
 --- !u!1 &1743201233
 GameObject:
   m_ObjectHideFlags: 0
@@ -8406,11 +8316,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.42, y: 8.5, z: 9.09}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1877170589 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 690748227293963606, guid: ef04b07e5ac97f7498d8b172e12e605d, type: 3}
-  m_PrefabInstance: {fileID: 906620083}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1877608083
 GameObject:
   m_ObjectHideFlags: 0

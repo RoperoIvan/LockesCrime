@@ -78,8 +78,9 @@ public class DialogueManager : MonoBehaviour
         {
             GameObject newResponse = Instantiate(responsePrefab, responseContainer.transform);
             Dialogue nDial = currentDialogueNode.responses[i].dialogueNode;
+            int charac = i;
             if(nDial == null)
-                newResponse.GetComponent<Button>().onClick.AddListener(() => { CloseDialogue(); });
+                newResponse.GetComponent<Button>().onClick.AddListener(() => { CloseDialogue(currentDialogueNode); });
             else
                 newResponse.GetComponent<Button>().onClick.AddListener(() => { GoToNextNode(nDial); });
 
@@ -102,7 +103,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(RevealText(currentDialogueNode.dialogues));
     }
 
-    public void CloseDialogue()
+    public void CloseDialogue(Dialogue dial)
     {
         CleanResponses();
         lastDialogueNodes[currentChar] = currentDialogueNode;
@@ -110,6 +111,11 @@ public class DialogueManager : MonoBehaviour
         CharacterController.characterController.hasInteraction = false;
         MouseCamLook.mouseCamLook.moveCam = true;
         Cursor.lockState = CursorLockMode.Locked;
+        if(dial.name.Equals("Sheriff_0"))
+        {
+            SceneManager.LoadScene("FinalScene");
+        }
+
         gameObject.SetActive(false);
     }
 
@@ -128,7 +134,7 @@ public class DialogueManager : MonoBehaviour
             GameObject newResponse = Instantiate(responsePrefab, responseContainer.transform);
             Dialogue nDial = currentDialogueNode.responses[i].dialogueNode;
             if (nDial == null)
-                newResponse.GetComponent<Button>().onClick.AddListener(() => { CloseDialogue(); });
+                newResponse.GetComponent<Button>().onClick.AddListener(() => { CloseDialogue(currentDialogueNode); });
             else
                 newResponse.GetComponent<Button>().onClick.AddListener(() => { GoToNextNode(nDial); });
             newResponse.transform.GetChild(0).GetComponent<TMP_Text>().text = currentDialogueNode.responses[i].response;
