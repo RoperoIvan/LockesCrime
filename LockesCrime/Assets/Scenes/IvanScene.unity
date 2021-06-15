@@ -5741,10 +5741,34 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5496723043495415581, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 20.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
       propertyPath: inputField
       value: 
       objectReference: {fileID: 773408241}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: pages.Array.data[0].openPageRotation.x
+      value: 0.0058249836
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: pages.Array.data[0].openPageRotation.y
+      value: 0.99411154
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: pages.Array.data[0].openPageRotation.z
+      value: -0.0032979392
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077013154779992147, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: pages.Array.data[0].openPageRotation.w
+      value: 0.10815509
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339934084350600940, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 135.67
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9adf437b01532974c9731df6bc1704a9, type: 3}
 --- !u!224 &1193001474 stripped
